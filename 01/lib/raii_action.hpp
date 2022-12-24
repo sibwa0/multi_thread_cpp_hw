@@ -19,8 +19,10 @@ private:
 
 public:
     RAIIAction(T _func) : func(_func) {}
-    RAIIAction& operator=(const RAIIAction& src);
+    RAIIAction(const RAIIAction&) = delete;
     RAIIAction(RAIIAction&&) = delete;
+    RAIIAction& operator=(const RAIIAction&) = delete;
+    RAIIAction& operator=(RAIIAction&&) = delete;
 
     ~RAIIAction();
 
@@ -32,15 +34,6 @@ public:
     friend std::ostream& operator<<(std::ostream& out, const RAIIAction<U>& obj);
 
 };
-
-template <callable T>
-RAIIAction<T>& RAIIAction<T>::operator=(const RAIIAction& src)
-{
-    if (&src == this) { return *this; }
-
-    func = src.func;
-    return *this;
-}
 
 
 // #include "raii_action.cpp"
