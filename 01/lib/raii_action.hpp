@@ -15,7 +15,7 @@ concept callable =
 template <callable T>
 class RAIIAction {
 private:
-    T func_
+    T func_;
 
 public:
     RAIIAction(T func) : func_(func) {}
@@ -25,10 +25,6 @@ public:
     RAIIAction& operator=(RAIIAction&&) = delete;
 
     ~RAIIAction();
-
-    void getFunc() const {
-        func;
-    }
 
     template<callable U>
     friend std::ostream& operator<<(std::ostream& out, const RAIIAction<U>& obj);
