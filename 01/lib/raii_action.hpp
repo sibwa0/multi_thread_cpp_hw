@@ -18,7 +18,7 @@ private:
     T func_
 
 public:
-    RAIIAction(T func_) : func(func_) {}
+    RAIIAction(T func) : func_(func) {}
     RAIIAction(const RAIIAction&) = delete;
     RAIIAction(RAIIAction&&) = delete;
     RAIIAction& operator=(const RAIIAction&) = delete;
