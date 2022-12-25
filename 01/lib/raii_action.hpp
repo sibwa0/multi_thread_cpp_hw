@@ -52,7 +52,7 @@ RAIIAction<T>::~RAIIAction() {
 
 template <callable T>
 std::ostream& operator<<(std::ostream& out, const RAIIAction<T>& obj) {
-    out << obj.func();
+    out << obj.func_();
 
     return out;
 }
