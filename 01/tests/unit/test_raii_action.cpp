@@ -47,7 +47,6 @@ TEST(TestRAIIAction, EffectOfWrappedFunction) {
         auto sample = RAIIAction<std::function<void()>>(std::bind(func));
     }
 
-    // проверим что функция исполнилась
     EXPECT_TRUE(isCalled);
 }
 

@@ -18,7 +18,7 @@ private:
     T func;
 
 public:
-    RAIIAction(T _func) : func(_func) {}
+    RAIIAction(T func_) : func(func_) {}
     RAIIAction(const RAIIAction&) = delete;
     RAIIAction(RAIIAction&&) = delete;
     RAIIAction& operator=(const RAIIAction&) = delete;
@@ -35,8 +35,6 @@ public:
 
 };
 
-
-// #include "raii_action.cpp"
 
 template <callable T>
 RAIIAction<T>::~RAIIAction() {
