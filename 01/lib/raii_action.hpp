@@ -15,7 +15,7 @@ concept callable =
 template <callable T>
 class RAIIAction {
 private:
-    T func;
+    T func_
 
 public:
     RAIIAction(T func_) : func(func_) {}
