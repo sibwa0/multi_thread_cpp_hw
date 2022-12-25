@@ -41,7 +41,7 @@ RAIIAction<T>::~RAIIAction() {
     // provide destructor being safe
     try
     {
-        func();
+        func_();
     }
     catch (...)
     {
